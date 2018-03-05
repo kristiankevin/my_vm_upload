@@ -1,0 +1,15 @@
+upstream myapp1 {
+        server 172.22.0.85;
+        server 172.22.0.116;
+	server 172.22.0.147;
+	server 172.22.0.178;
+	server 172.22.0.54;
+    }
+
+server {
+	listen 80;
+
+        location / {
+            proxy_pass http://myapp1;
+        }
+}
